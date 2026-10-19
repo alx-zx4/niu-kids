@@ -2107,7 +2107,7 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
       </div>
     </div>
   </div>
-  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="waveGradTestimonios" x1="35%" y1="0%" x2="65%" y2="100%"><stop offset="0%" stop-color="#5B2FA8"/><stop offset="60%" stop-color="#7550C0"/><stop offset="100%" stop-color="#5B2FA8"/></linearGradient></defs><path fill="url(#waveGradTestimonios)" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="waveGradTestimonios" x1="35%" y1="0%" x2="65%" y2="100%"><stop offset="0%" stop-color="#1D3A9E"/><stop offset="60%" stop-color="#3257C4"/><stop offset="100%" stop-color="#1D3A9E"/></linearGradient></defs><path fill="url(#waveGradTestimonios)" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
 </section>
 
 <!-- TESTIMONIOS -->
@@ -2334,7 +2334,7 @@ Estamos a unos minutos de casa y muy fácil de encontrar: entrada segura, acceso
       </div>
     </div>
   </div>
-  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="waveGradContacto" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stop-color="#84409E"/><stop offset="42%" stop-color="#BD5792"/><stop offset="60%" stop-color="#EF6C86"/><stop offset="100%" stop-color="#EF6C86"/></linearGradient></defs><path fill="url(#waveGradContacto)" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
+  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="waveGradContacto" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stop-color="#1D3A9E"/><stop offset="42%" stop-color="#245CC0"/><stop offset="60%" stop-color="#2E8BF0"/><stop offset="100%" stop-color="#2E8BF0"/></linearGradient></defs><path fill="url(#waveGradContacto)" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
 </section>
 
 <!-- CONTACTO / COTIZAR -->
@@ -3019,6 +3019,38 @@ window.addEventListener('scroll', function(){
   panel.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){ setOpen(false); });
   });
+})();
+
+/* ── HERO AUTO-FIT (garantiza que el hero quepa en pantalla sin scroll) ──
+   El tamaño del título ya se encoge solo con vw+svh en el CSS, pero un
+   nombre de salón muy largo puede seguir sin caber en pantallas bajas
+   (celular en horizontal, laptop de poca altura). Esto mide si el
+   contenido real del hero se pasa del alto del propio #hero y, si es así,
+   reduce el font-size del título en pasos chicos hasta que quepa, con un
+   piso mínimo legible. Corre al cargar, al redimensionar y cuando
+   terminan de cargar las fuentes (si no se espera a document.fonts.ready,
+   el primer cálculo mide con la fuente de reemplazo del sistema y el
+   ajuste sale mal calculado). No toca nada si el contenido ya cabe. */
+(function(){
+  var hero = document.getElementById('hero');
+  var inner = hero && hero.querySelector('.hero-inner');
+  var title = hero && hero.querySelector('.hero-title');
+  if(!hero || !inner || !title) return;
+  var MIN = 28;
+  function fit(){
+    title.style.fontSize = '';
+    var guard = 0;
+    while(inner.scrollHeight > hero.clientHeight && guard < 40){
+      var size = parseFloat(getComputedStyle(title).fontSize);
+      if(size <= MIN) break;
+      title.style.fontSize = (size - 2) + 'px';
+      guard++;
+    }
+  }
+  function run(){ requestAnimationFrame(fit); }
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(run); } else { run(); }
+  window.addEventListener('load', run);
+  window.addEventListener('resize', run);
 })();
 
 /* ── TAB SWITCHING ──
