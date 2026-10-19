@@ -990,7 +990,7 @@ nav.scrolled .nav-links a:hover{color:var(--dark)}
 
 .servicios-grid{
   display:grid;grid-template-columns:repeat(4,1fr);
-  grid-auto-rows:230px;grid-auto-flow:dense;gap:18px;
+  grid-auto-rows:230px;grid-auto-flow:row;gap:18px;
 }
 .servicio-card{
   position:relative;border-radius:18px;overflow:hidden;isolation:isolate;
@@ -1559,6 +1559,7 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
 .faq-chat-item.open .faq-chat-a-wrap{width:100%!important}
 .faq-chat-a-inner{display:flex!important;justify-content:flex-end!important;width:100%!important}
 .faq-chat-a{margin-left:0!important}
+.faq-empty-note{max-width:480px;margin:0 auto;text-align:center;color:var(--dark);font-size:15px;line-height:1.7;font-weight:500;opacity:.85}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 <link rel="preload" as="image" href="fotos/hero.webp">
@@ -1955,384 +1956,7 @@ footer{background:var(--dark);position:relative;overflow:hidden;padding:0 0 24px
            confirmadas por el cliente. -->
       </div>
     <div class="faq-list">
-      <!-- Las 5 preguntas son FIJAS — no agregar ni quitar, solo llenar la
-           respuesta. Sin dato: deja el mensaje "No tenemos datos
-           suficientes..." tal cual — nunca inventes una política, un
-           horario ni un costo sin confirmar. Cada pregunta tiene un ícono
-           temático — [EDITAR] quítalos o cámbialos si no encajan con la
-           marca de este cliente. -->
-      <div class="faq-chat-item">
-        <button class="faq-chat-q" onclick="toggleFaqChat(this)">
-          <span class="faq-chat-icon right"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-          <span>¿Cuánto tiempo dura la fiesta?</span>
-          <span class="faq-chat-toggle">
-            <svg class="faq-chat-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            <svg class="faq-chat-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-chat-a-wrap">
-          <div class="faq-chat-a-inner">
-            <!-- [EDITAR] Respuesta real, o deja el mensaje de "sin datos" tal cual -->
-            <div class="faq-chat-a">No tenemos datos suficientes todavía, pero tranquil@ 🤝 esto lo trabajamos juntos.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-chat-item">
-        <button class="faq-chat-q" onclick="toggleFaqChat(this)">
-          <span class="faq-chat-icon left"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6a2 2 0 0 0 2 2h3z"/><path d="M17 22v-7"/></svg></span>
-          <span>¿Incluye meseros, comida y limpieza?</span>
-          <span class="faq-chat-toggle">
-            <svg class="faq-chat-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            <svg class="faq-chat-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-chat-a-wrap">
-          <div class="faq-chat-a-inner">
-            <div class="faq-chat-a">No tenemos datos suficientes todavía, pero tranquil@ 🤝 esto lo trabajamos juntos.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-chat-item">
-        <button class="faq-chat-q" onclick="toggleFaqChat(this)">
-          <span class="faq-chat-icon right"><svg viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M12 11v11"/><path d="M12 11c4 0 7-2.5 7-7 0-1-.2-2-.5-3H5.5C5.2 2 5 3 5 4c0 4.5 3 7 7 7z"/></svg></span>
-          <span>¿Puedo llevar mi propio animador o inflable?</span>
-          <span class="faq-chat-toggle">
-            <svg class="faq-chat-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            <svg class="faq-chat-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-chat-a-wrap">
-          <div class="faq-chat-a-inner">
-            <div class="faq-chat-a">No tenemos datos suficientes todavía, pero tranquil@ 🤝 esto lo trabajamos juntos.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-chat-item">
-        <button class="faq-chat-q" onclick="toggleFaqChat(this)">
-          <span class="faq-chat-icon left"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></span>
-          <span>¿Necesito dejar anticipo para apartar?</span>
-          <span class="faq-chat-toggle">
-            <svg class="faq-chat-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            <svg class="faq-chat-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-chat-a-wrap">
-          <div class="faq-chat-a-inner">
-            <div class="faq-chat-a">No tenemos datos suficientes todavía, pero tranquil@ 🤝 esto lo trabajamos juntos.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-chat-item">
-        <button class="faq-chat-q" onclick="toggleFaqChat(this)">
-          <span class="faq-chat-icon right"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9"/><path d="M12 8v13"/><path d="M12 8S10.5 3 8 4.5 9.5 8 12 8z"/><path d="M12 8s1.5-5 4-3.5S14.5 8 12 8z"/></svg></span>
-          <span>¿Puedo llevar pastel y decoración propia?</span>
-          <span class="faq-chat-toggle">
-            <svg class="faq-chat-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            <svg class="faq-chat-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-chat-a-wrap">
-          <div class="faq-chat-a-inner">
-            <div class="faq-chat-a">No tenemos datos suficientes todavía, pero tranquil@ 🤝 esto lo trabajamos juntos.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <svg class="wave-divider wave-to-dark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
-</section>
-
-<!-- GALERÍA -->
-<section id="galeria">
-  <div class="galeria-inner">
-    <div class="galeria-head reveal">
-      <!-- [EDITAR] Título — "Momentos" se circulará al entrar en vista -->
-      <h2 class="section-title light vcr" data-vcr="Momentos que hacen sonreír"></h2>
-    </div>
-
-    <div class="galeria-layout">
-      <!-- Card Carousel (imagen que se scrollea/toca) -->
-      <div>
-        <div class="card-carousel-wrap" id="cardCarousel">
-          <div class="card-item" style="background-image:url('fotos/galeria-1.webp')">          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-2.webp')">          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-3.webp')">          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-4.webp')">          </div>
-          <div class="card-item" style="background-image:url('fotos/galeria-5.webp')">          </div>
-          <div id="cardPips" class="card-pips"></div>
-        </div>
-        <p class="carousel-hint">Toca o haz clic para ver más →</p>
-      </div>
-
-      <!-- Conveyor belt vertical — UNA sola columna de cuadrados. [EDITAR]
-           agrega/quita fotos en AMBAS copias (misma cantidad y orden) para
-           no romper el loop. -->
-      <div class="galeria-belt">
-        <div class="belt-track">
-          <div class="belt-item"><img src="fotos/galeria-1.webp" alt="Salón con mural NIU Kids" loading="lazy"><span class="belt-item-label">Salón con mural NIU Kids</span></div>
-          <div class="belt-item"><img src="fotos/galeria-2.webp" alt="Mesas y juegos a la vista" loading="lazy"><span class="belt-item-label">Mesas y juegos a la vista</span></div>
-          <div class="belt-item"><img src="fotos/galeria-3.webp" alt="Fachada NIU Kids" loading="lazy"><span class="belt-item-label">Fachada NIU Kids</span></div>
-          <div class="belt-item"><img src="fotos/galeria-4.webp" alt="Alberca de niños" loading="lazy"><span class="belt-item-label">Alberca de niños</span></div>
-          <div class="belt-item"><img src="fotos/galeria-5.webp" alt="Salón de juegos" loading="lazy"><span class="belt-item-label">Salón de juegos</span></div>
-          <!-- repetición para loop continuo -->
-          <div class="belt-item"><img src="fotos/galeria-1.webp" alt="Salón con mural NIU Kids" loading="lazy"><span class="belt-item-label">Salón con mural NIU Kids</span></div>
-          <div class="belt-item"><img src="fotos/galeria-2.webp" alt="Mesas y juegos a la vista" loading="lazy"><span class="belt-item-label">Mesas y juegos a la vista</span></div>
-          <div class="belt-item"><img src="fotos/galeria-3.webp" alt="Fachada NIU Kids" loading="lazy"><span class="belt-item-label">Fachada NIU Kids</span></div>
-          <div class="belt-item"><img src="fotos/galeria-4.webp" alt="Alberca de niños" loading="lazy"><span class="belt-item-label">Alberca de niños</span></div>
-          <div class="belt-item"><img src="fotos/galeria-5.webp" alt="Salón de juegos" loading="lazy"><span class="belt-item-label">Salón de juegos</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <svg class="wave-divider wave-to-creamdark" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
-</section>
-
-<!-- SERVICIOS -->
-<section id="servicios">
-  <!-- Un solo tono (naranja), no 4 colores compitiendo en el mismo racimo
-       — se pidió bajarle al ruido visual. -->
-  <div class="hero-dots servicios-dots-tr" aria-hidden="true">
-    <svg width="90" height="70" viewBox="0 0 90 70" fill="none">
-      <circle cx="12" cy="12" r="9"  fill="rgba(255,122,51,0.30)"/>
-      <circle cx="40" cy="8"  r="6"  fill="rgba(255,122,51,0.22)"/>
-      <circle cx="60" cy="20" r="10" fill="rgba(255,122,51,0.18)"/>
-    </svg>
-  </div>
-  <div class="servicios-inner">
-    <div class="servicios-head reveal">
-      <!-- [EDITAR] Título — la palabra "fiesta" se circulará al entrar en vista -->
-      <h2 class="section-title dark-txt vcr" data-vcr="Todo para una fiesta increíble"></h2>
-      <p class="servicios-sub">Animación, inflables, dulces y decoración: armamos la fiesta completa para que tú solo llegues a celebrar.</p>
-    </div>
-    <div class="servicios-grid">
-      <!-- 01 — oscura -->
-      <div class="servicio-card servicio-dark reveal">
-        <span class="servicio-num">01</span>
-        <div class="servicio-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Animadores y Payasos</div>
-          <p class="servicio-desc">Juegos, concursos y mucha risa: alguien se encarga de que ningún niño se aburra.</p>
-        </div>
-      </div>
-      <!-- 02 — foto, destacada -->
-      <div class="servicio-card servicio-photo servicio-featured reveal reveal-delay-1">
-        <div class="servicio-bg" style="background-image:url('fotos/servicio-dulces.webp')"></div>
-        <span class="servicio-num">02</span>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Alberca con Toboganes</div>
-          <p class="servicio-desc">Toboganes de colores y área de agua para los niños, en alberca techada.</p>
-        </div>
-      </div>
-      <!-- 03 — foto, destacada -->
-      <div class="servicio-card servicio-photo servicio-featured reveal reveal-delay-2">
-        <div class="servicio-bg" style="background-image:url('fotos/servicio-mickey.webp')"></div>
-        <span class="servicio-num">03</span>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Mesa de Dulces</div>
-          <p class="servicio-desc">Botanas, dulces y frutas en charolas listas para la fiesta.</p>
-        </div>
-      </div>
-      <!-- 04 — foto, destacada -->
-      <div class="servicio-card servicio-photo servicio-featured reveal reveal-delay-3">
-        <div class="servicio-bg" style="background-image:url('fotos/espacio-cine.webp')"></div>
-        <span class="servicio-num">04</span>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Decoración Temática</div>
-          <p class="servicio-desc">Detalles temáticos en cajas de dulces y decoración de tu personaje favorito.</p>
-        </div>
-      </div>
-      <!-- 05 — oscura -->
-      <div class="servicio-card servicio-dark reveal">
-        <span class="servicio-num">05</span>
-        <div class="servicio-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 21h16"/><path d="M4 21v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M12 13V9"/><path d="M12 6.5a1.5 1.5 0 1 0-1.5-1.5c0 .9 1.5 1.5 1.5 1.5z"/></svg>
-        </div>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Pastelería y Snacks</div>
-          <p class="servicio-desc">Pastel del tema, botanas para los niños y algo rico también para los adultos.</p>
-        </div>
-      </div>
-      <!-- 06 — oscura -->
-      <div class="servicio-card servicio-dark reveal reveal-delay-1">
-        <span class="servicio-num">06</span>
-        <div class="servicio-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 10h18"/><path d="M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M6 10v10"/><path d="M18 10v10"/></svg>
-        </div>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Mobiliario Infantil</div>
-          <p class="servicio-desc">Mesas y sillas a la altura de los peques, y mobiliario cómodo para los grandes.</p>
-        </div>
-      </div>
-      <!-- 07 — foto, destacada -->
-      <div class="servicio-card servicio-photo servicio-featured reveal reveal-delay-2">
-        <div class="servicio-bg" style="background-image:url('fotos/espacio-alberca.webp')"></div>
-        <span class="servicio-num">07</span>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Niu Cinema</div>
-          <p class="servicio-desc">Cine, mural y juegos para ver las caricaturas y pasar la tarde.</p>
-        </div>
-      </div>
-      <!-- 08 — oscura -->
-      <div class="servicio-card servicio-dark reveal reveal-delay-3">
-        <span class="servicio-num">08</span>
-        <div class="servicio-icon">
-          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        </div>
-        <div class="servicio-card-content">
-          <div class="servicio-name">Fotografía y Recuerdos</div>
-          <p class="servicio-desc">Fotos de la fiesta y recuerditos para que cada invitado se lleve algo del día.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="waveGradTestimonios" x1="35%" y1="0%" x2="65%" y2="100%"><stop offset="0%" stop-color="#5B2FA8"/><stop offset="60%" stop-color="#7550C0"/><stop offset="100%" stop-color="#5B2FA8"/></linearGradient></defs><path fill="url(#waveGradTestimonios)" d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"/></svg>
-</section>
-
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <!-- Un solo tono (rosa), no 4 colores compitiendo en el mismo racimo —
-       se pidió bajarle al ruido visual. -->
-  <div class="hero-dots testimonios-dots-bl" aria-hidden="true">
-    <svg width="80" height="65" viewBox="0 0 80 65" fill="none">
-      <circle cx="10" cy="50" r="8"  fill="rgba(239,108,134,0.28)"/>
-      <circle cx="35" cy="55" r="6"  fill="rgba(239,108,134,0.20)"/>
-      <circle cx="55" cy="42" r="10" fill="rgba(239,108,134,0.16)"/>
-    </svg>
-  </div>
-  <div class="testimonios-inner">
-    <div class="testimonios-head reveal">
-      <div>
-        <!-- [EDITAR] Título — "reseñas" se circulará al entrar en vista -->
-        <h2 class="section-title light vcr" data-vcr="Las reseñas de nuestros papás"></h2>
-      </div>
-      <div class="rating-badge">
-        <span class="rating-num">4.0</span>
-        <span class="rating-stars">★★★★☆</span>
-        <span class="rating-count">92 reseñas en Google</span>
-      </div>
-    </div>
-
-    <!-- [EDITAR] Postales de reseñas — data-quote lleva el texto completo que se
-         muestra al hacer click; el <p class="postcard-quote"> lleva la versión
-         corta que se ve en la tarjeta. -->
-    <div class="postcards-wrap reveal reveal-delay-1">
-      <div class="postcards-track" id="postcardsTrack">
-        <button type="button" class="postcard" style="--rot:-2deg"
-          data-name="Lalo" data-role="Reseña en Google"
-          data-quote="Se disfruto mucho la Fiesta, las instalaciones muy Bien y el precio tambien, gracias a todo el apoyo de la Coordinadora Elizabeth, desde que fuimos a ver el Salon hasta la entrega de Fotografías muy atenta. Los recomiendo ampliamente:)">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">L</div>
-          <p class="postcard-quote">"Se disfruto mucho la Fiesta, las instalaciones muy Bien y el precio tambien, gracias a todo el apoyo de la Coordinadora..."</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Lalo</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:1.5deg"
-          data-name="Maheli Reyes" data-role="Reseña en Google"
-          data-quote="Excelente servicio, las instalaciones padrisimas, todos los invitados salieron muy contentos con el lugar, el concepto de área acuática super top, lo recomiendo y sin duda los volveré a contratar para otro evento">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">MR</div>
-          <p class="postcard-quote">"Excelente servicio, las instalaciones padrisimas, todos los invitados salieron muy contentos con el lugar, el concepto de..."</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Maheli Reyes</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:-1deg"
-          data-name="ileana mendez" data-role="Reseña en Google"
-          data-quote="Se me hace super cool que tengan área de agua para los niños y vi fotos que cuando es tiempo de frio llenan toda esa área con pelotas para seguir disfrutando del espacio. Una experiencia diferente que no te dan otros salones">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">IM</div>
-          <p class="postcard-quote">"Se me hace super cool que tengan área de agua para los niños y vi fotos que cuando es tiempo de frio llenan toda esa área..."</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">ileana mendez</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:2deg"
-          data-name="Mario A. Cerda" data-role="Reseña en Google"
-          data-quote="Todo muy bien, excelentes las albercas y el show de muy buena calidad.">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">MA</div>
-          <p class="postcard-quote">"Todo muy bien, excelentes las albercas y el show de muy buena calidad."</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Mario A. Cerda</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:-1.5deg"
-          data-name="Julian Gamboa" data-role="Reseña en Google"
-          data-quote="Super recomendable! Servicio: 10, Instalaciones: 10, Atencion: 10. Regresaremos el siguiente año!">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">JG</div>
-          <p class="postcard-quote">"Super recomendable! Servicio: 10, Instalaciones: 10, Atencion: 10. Regresaremos el siguiente año!"</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Julian Gamboa</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:1deg"
-          data-name="Alejandra Abad" data-role="Reseña en Google"
-          data-quote="Muy bonito el lugar amplio. Personal muy atento, está muy completo en cuestión de juegos y alberca para los niños, estacionamiento la vdd si lo recomiendo">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">AA</div>
-          <p class="postcard-quote">"Muy bonito el lugar amplio. Personal muy atento, está muy completo en cuestión de juegos y alberca para los niños,..."</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Alejandra Abad</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:-2.5deg"
-          data-name="Mago Karlander" data-role="Reseña en Google"
-          data-quote="Excelentes instalaciones nos tocó ir a trabajar con nuestro show de magia. Muy atento todo el personal.">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">MK</div>
-          <p class="postcard-quote">"Excelentes instalaciones nos tocó ir a trabajar con nuestro show de magia. Muy atento todo el personal."</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Mago Karlander</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-
-        <button type="button" class="postcard" style="--rot:1.2deg"
-          data-name="Sandra Rodríguez" data-role="Reseña en Google"
-          data-quote="Muy bonito lugar para festejar a los chiquitines!!">
-          <svg class="postcard-quote-mark" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V14.4C0 6.4 5.2 1 13.6 0l1.6 4C9.2 5.6 6.4 9.2 6 14h7.2v10H0zm17.6 0V14.4C17.6 6.4 22.8 1 31.2 0l1.6 4c-6 1.6-8.8 5.2-9.2 10h7.2v10H17.6z"/></svg>
-          <div class="postcard-avatar">SR</div>
-          <p class="postcard-quote">"Muy bonito lugar para festejar a los chiquitines!!"</p>
-          <div class="postcard-foot">
-            <div class="postcard-name">Sandra Rodríguez</div>
-            <div class="postcard-role">Reseña en Google</div>
-          </div>
-          <div class="postcard-more">Leer completa →</div>
-        </button>
-      </div>
-      <button class="postcard-nav postcard-prev" id="postcardPrev" aria-label="Reseña anterior">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button class="postcard-nav postcard-next" id="postcardNext" aria-label="Siguiente reseña">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
+      <p class="faq-empty-note">Aquí vamos a poner las preguntas que más nos hagan sobre este salón. Mientras las juntamos, cualquier duda nos escriben directo y se las resolvemos al momento.</p>
     </div>
   </div>
 </section>
@@ -3175,10 +2799,14 @@ var INV_DIR   = 'Mariano Matamoros 505';
   function v(n,f){ var x=(cs.getPropertyValue(n)||'').trim(); return x||f; }
   var C={primary:v('--primary','#EF6C86'),accent:v('--accent','#FF7A33'),accent2:v('--accent2','#5FCB6B'),dark:v('--dark','#5B2FA8'),cream:v('--cream','#FFF6EA'),white:'#FFFFFF'};
   var TEMAS=[
-    {a:C.primary,b:C.dark,   ink:C.white,c1:C.accent2,c2:C.accent},
-    {a:C.accent, b:C.primary,ink:C.white,c1:C.cream,  c2:C.accent2},
-    {a:C.accent2,b:C.dark,   ink:C.white,c1:C.accent, c2:C.primary},
-    {a:C.cream,  b:C.accent2,ink:C.dark, c1:C.primary,c2:C.accent}
+    {a:C.primary,b:C.dark,   ink:C.white,c1:C.accent2,c2:C.accent, estilo:'confeti'},
+    {a:C.accent, b:C.primary,ink:C.white,c1:C.cream,  c2:C.accent2,estilo:'flores'},
+    {a:C.accent2,b:C.dark,   ink:C.white,c1:C.accent, c2:C.primary,estilo:'carritos'},
+    {a:C.cream,  b:C.accent2,ink:C.dark, c1:C.primary,c2:C.accent, estilo:'puntos'},
+    {a:C.dark,   b:C.primary,ink:C.white,c1:C.cream,  c2:C.accent, estilo:'estrellas'},
+    {a:C.primary,b:C.accent2,ink:C.white,c1:C.dark,   c2:C.cream,  estilo:'globos'},
+    {a:C.accent, b:C.dark,   ink:C.white,c1:C.cream,  c2:C.primary,estilo:'corazones'},
+    {a:C.cream,  b:C.primary,ink:C.dark, c1:C.accent, c2:C.accent2,estilo:'banderines'}
   ];
   var temaIdx=0;
   var MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
@@ -3188,6 +2816,60 @@ var INV_DIR   = 'Mariano Matamoros 505';
   function fechaTexto(val){ if(!val) return ''; var p=val.split('-'); var d=new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2])); return DIAS[d.getDay()]+' '+parseInt(p[2],10)+' de '+MESES[parseInt(p[1])-1]; }
   function fit(txt,weight,maxW,minS,maxS){ var sz=maxS; do{ ctx.font=weight+' '+sz+'px "Baloo 2","Trebuchet MS",sans-serif'; if(ctx.measureText(txt).width<=maxW) break; sz-=4; }while(sz>minS); return sz; }
 
+  /* ── 8 motivos decorativos, uno por tema — todos vector/canvas puro ── */
+  var SPOTS=[[95,130,26],[210,85,14],[W-115,155,30],[W-75,320,16],[130,H-170,22],[W-150,H-130,28],[W-95,H-330,14],[75,H-380,17]];
+  function porPunto(fn){ for(var i=0;i<SPOTS.length;i++){ var p=SPOTS[i]; fn(p[0],p[1],p[2],i%2); } }
+  var MOTIVOS={
+    confeti:function(c1,c2){ porPunto(function(x,y,r,alt){ ctx.globalAlpha=.9; ctx.fillStyle=alt?c1:c2; ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill(); }); ctx.globalAlpha=1; },
+    flores:function(c1,c2){ porPunto(function(x,y,r,alt){
+      var color=alt?c1:c2, pr=r*0.62;
+      ctx.globalAlpha=.9; ctx.fillStyle=color;
+      for(var p=0;p<5;p++){ var ang=p*(Math.PI*2/5);
+        ctx.beginPath(); ctx.ellipse(x+Math.cos(ang)*r*0.5,y+Math.sin(ang)*r*0.5,pr*0.55,pr,ang,0,Math.PI*2); ctx.fill(); }
+      ctx.fillStyle='rgba(255,255,255,.85)'; ctx.beginPath(); ctx.arc(x,y,r*0.3,0,Math.PI*2); ctx.fill();
+      ctx.globalAlpha=1; }); },
+    carritos:function(c1,c2){ porPunto(function(x,y,r,alt){
+      var color=alt?c1:c2, w=r*2.6, h=r*1.1;
+      ctx.globalAlpha=.9; ctx.fillStyle=color;
+      ctx.fillRect(x-w/2,y-h*0.35,w,h*0.5);
+      ctx.fillRect(x-w*0.22,y-h*0.75,w*0.46,h*0.42);
+      ctx.fillStyle='rgba(43,24,84,.55)';
+      ctx.beginPath(); ctx.arc(x-w*0.27,y+h*0.17,h*0.26,0,Math.PI*2); ctx.fill();
+      ctx.beginPath(); ctx.arc(x+w*0.27,y+h*0.17,h*0.26,0,Math.PI*2); ctx.fill();
+      ctx.globalAlpha=1; }); },
+    puntos:function(c1,c2){ porPunto(function(x,y,r,alt){ ctx.globalAlpha=.55; ctx.fillStyle=alt?c1:c2; ctx.beginPath(); ctx.arc(x,y,r*1.5,0,Math.PI*2); ctx.fill(); }); ctx.globalAlpha=1; },
+    estrellas:function(c1,c2){ porPunto(function(x,y,r,alt){
+      var color=alt?c1:c2, outer=r*0.95, inner=outer*0.42;
+      ctx.globalAlpha=.9; ctx.fillStyle=color; ctx.beginPath();
+      for(var i=0;i<10;i++){ var rad=(i%2===0)?outer:inner, ang=(Math.PI/5)*i-Math.PI/2;
+        var px=x+Math.cos(ang)*rad, py=y+Math.sin(ang)*rad;
+        if(i===0) ctx.moveTo(px,py); else ctx.lineTo(px,py); }
+      ctx.closePath(); ctx.fill(); ctx.globalAlpha=1; }); },
+    globos:function(c1,c2){ porPunto(function(x,y,r,alt){
+      var color=alt?c1:c2;
+      ctx.globalAlpha=.9; ctx.fillStyle=color;
+      ctx.beginPath(); ctx.ellipse(x,y,r*0.72,r*0.95,0,0,Math.PI*2); ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(x,y+r*0.9); ctx.quadraticCurveTo(x+8,y+r*1.3,x,y+r*1.6); ctx.stroke();
+      ctx.globalAlpha=1; }); },
+    corazones:function(c1,c2){ porPunto(function(x,y,r,alt){
+      var color=alt?c1:c2, hr=r*0.55;
+      ctx.globalAlpha=.9; ctx.fillStyle=color; ctx.beginPath();
+      ctx.arc(x-hr,y-hr*0.4,hr,Math.PI,0);
+      ctx.arc(x+hr,y-hr*0.4,hr,Math.PI,0);
+      ctx.lineTo(x,y+hr*1.7); ctx.closePath(); ctx.fill(); ctx.globalAlpha=1; }); },
+    banderines:function(c1,c2){
+      var n=9, segW=W/n, triH=34, y0=16;
+      for(var i=0;i<n;i++){
+        ctx.globalAlpha=.85; ctx.fillStyle=(i%2?c1:c2);
+        var cx=segW*i+segW/2;
+        ctx.beginPath(); ctx.moveTo(cx-segW*0.35,y0); ctx.lineTo(cx+segW*0.35,y0); ctx.lineTo(cx,y0+triH); ctx.closePath(); ctx.fill();
+      }
+      ctx.globalAlpha=1; ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(0,y0); ctx.lineTo(W,y0); ctx.stroke();
+    }
+  };
+
   function draw(){
     var nombre=(document.getElementById('inv-nombre').value||'').trim()||'Nombre';
     var edad=(document.getElementById('inv-edad').value||'').trim();
@@ -3196,8 +2878,7 @@ var INV_DIR   = 'Mariano Matamoros 505';
     var t=TEMAS[temaIdx];
     var g=ctx.createLinearGradient(0,0,W,H); g.addColorStop(0,t.a); g.addColorStop(1,t.b);
     ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
-    var dots=[[95,130,26],[210,85,14],[W-115,155,30],[W-75,320,16],[130,H-170,22],[W-150,H-130,28],[W-95,H-330,14],[75,H-380,17]];
-    for(var i2=0;i2<dots.length;i2++){ ctx.beginPath(); ctx.fillStyle=(i2%2?t.c1:t.c2); ctx.globalAlpha=.9; ctx.arc(dots[i2][0],dots[i2][1],dots[i2][2],0,Math.PI*2); ctx.fill(); }
+    (MOTIVOS[t.estilo]||MOTIVOS.confeti)(t.c1,t.c2);
     ctx.globalAlpha=1; ctx.textAlign='center'; ctx.fillStyle=t.ink;
     ctx.font='700 46px "Baloo 2","Trebuchet MS",sans-serif'; ctx.fillText('¡Te invito a mi fiesta!',W/2,310);
     var ns=fit(nombre.toUpperCase(),'800',W-170,64,150);
